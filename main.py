@@ -51,7 +51,7 @@ def main(token):
             loaded_str += f"{i}, "
         print(f"{loaded_str} successfully loaded")
         
-        if dev:
+        if not dev:
             dbd.openDash(init_bot=bot, port=1234)
             keep_alive()
 
