@@ -1,0 +1,4 @@
+discord==2.3.2
+aiofiles==24.1.0
+discordbotdash==1.2.3
+flask==3.0.3
