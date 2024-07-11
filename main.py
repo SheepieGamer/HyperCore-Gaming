@@ -81,7 +81,9 @@ def main(token):
         async with aiofiles.open(f"guilds/{ctx.guild.id}.txt", mode="a") as file:
             await file.write(f"{member.id} {ctx.author.id} {reason}\n")
 
-        await ctx.send(f"{member.mention} has {count} {'warning' if first_warning else 'warnings'}!")
+        await ctx.send(f"Successfully muted {member.mention} for {reason}")
+        await ctx.send(f"{member} has {count} {'warning' if first_warning else 'warnings'}!")
+        await member.send(f"{ctx.author} has warned you! Reason: {reason}. Total warns: {count}")
 
     @bot.hybrid_command()
     @commands.has_permissions(kick_members=True)
